@@ -1,11 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +13,59 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff30 transparent;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.bg-gray-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(25 25 25 / var(--tw-bg-opacity));
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.sm\:ui-not-open\:bg-gray-1[data-headlessui-state]:not([data-headlessui-state~="open"]) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(25 25 25 / var(--tw-bg-opacity));
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.ui-not-checked\:bg-white\/50[data-headlessui-state]:not([data-headlessui-state~=checked]) {
+  background-color: hsla(0, 0%, 100%, .5);
+  height: 15px;
+}
+
+.testnet-toggle-on {
+  background-color: rgb(0 0 0/1);
+  transform: translate(3px, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+.testnet-toggle-off {
+  background-color: rgb(0 0 0/1);
+  transform: translate(15px, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
+
+button:focus-visible, input:focus-visible {
+  box-sizing: border-box;
+  outline-offset: -2px;
+  outline: 2px solid #005fcc;
+}
+
+table {
+  width:100%;
+  text-align: center;
+  color: white;
+  border-spacing: 10px; 
+
+}
+
+table button {
+  background-color: #005fcc79;
+  padding: 5px;
+  border-radius: 3px;
 }
